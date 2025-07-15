@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <a href="/" style="font-size: 20px;">Home</a>
+        <div style="width: 1200px; text-align: center; margin: 0 auto;">
+            <h3 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Add Catogory</h3>
+            
+            <table align="center"  cellspacing="5" style="margin-bottom: 20px;border-collapse: collapse;">
+                <tr style="border: 1px black solid;">
+                    <th style="padding: 10px;">Category Id</th>
+                    <th style="padding: 10px;">Category Name</th>
+                </tr>
+                <% let lastCID; %>
+                <% for(let i=0; i<result.length; i++){ %>
+                    <tr style="text-align: center;border: 1px black solid;">
+                        <td style="padding: 10px;"><%=result[i].CID %></td>
+                        <td style="padding: 10px;"><%=result[i].CName %></td>
+                        <td style="padding: 10px;">
+                            <a id="delete" style="padding: 8px 16px; background-color: #d01110; font-weight: bold; color: white; text-decoration: none; border-radius: 5px;" 
+                                href="/delcatogary?id=<%=result[i].CID %>">Delete</a>
+                        </td>
+                    </tr>
+                    <% lastCID = result[i].CID; %>
+                <% } %>
+                
+            </table>
+            <div class="add" >
+            <a id="add" style="padding: 8px 16px; background-color:#7D2AE7; color: white; font-weight: bold; text-decoration: none; border-radius: 5px;" 
+                            href="/addcatogory?id=<%=lastCID %>">Add Catogory</a>
+            </div>
+        </div>
+    </body>
+</html>
+<!-- #167d7f  greenish -->
+<!-- #059ecb  -->
+<!-- #7D2AE7    canva purple -->
+<!-- #2A89DA canva blue -->
+<!-- #01C3CC -->

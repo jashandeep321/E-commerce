@@ -1,0 +1,71 @@
+<html>
+    <head>
+    </head>
+    <style>
+        .actions {
+                display: flex;
+                justify-content: center;
+                box-shadow: none;
+                border: none;
+            }
+            #edit, #delete, #add {
+            box-shadow: none;
+        }
+    </style>
+    <body>
+        <a href="/" style="font-size: 20px;">Home</a>
+        <div style="width: 1200px; text-align: center; margin: 0 auto;">
+            
+            <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">MENU</h2>
+            
+            <table align="center" border="1" cellspacing="5" style="border-collapse: collapse; margin: auto;margin-bottom: 20px;">
+                <tr>
+                    <th style="padding: 10px;">ProductId</th>
+                    <th style="padding: 10px;">Catogory</th>
+                    <th style="padding: 10px;">ProductBrand</th>
+                    <th style="padding: 10px;">ProductName</th>
+                    <th style="padding: 10px;">ProductDescription</th>
+                    <th style="padding: 10px;">ProductMRP</th>
+                    <th style="padding: 10px;">ProductPrice</th>
+                    <th style="padding: 10px;">ProductImage</th>
+                    <th style="padding: 10px;">Edit</th>
+                    <th style="padding: 10px;">Delete</th>
+                </tr>
+                <% let lastproductID; %>
+                <% for(let i=0;i<result.length;i++){ %>
+                    <tr style="text-align: center;">
+                        <td  style="padding: 5px;"><%=result[i].productID %></td>
+                        <td  style="padding: 5px;"><%=result[i].productCatogory %></td>
+                        <td  style="padding: 5px;"><%=result[i].productBrand %></td>
+                        <td style="padding: 5px;"><%=result[i].productName %></td>
+                        <td style="padding: 5px;"><%=result[i].productDetails %></td>
+                        <td style="padding: 5px;"><%=result[i].productMRP %></td>
+                        <td style="padding: 5px;"><%=result[i].productPrice %></td>
+                        <td style="padding: 5px;">
+                            <img src="/uploads/<%= result[i].productImage %>"style="max-width: 100px; max-height: 100px;">
+
+                            </td>
+                            <!-- <% if (result[i].ProductImage) { %>
+                                <div style="padding-top: 5px;"><%= result[i].ProductImage %></div>
+                            <% } %> -->
+                        </td style="padding: 5px;">
+                        <td >
+                            <a id="edit" style="padding: 8px 16px; background-color: #2A89DA; color: white; font-weight: bold; text-decoration: none; border-radius: 5px; margin-right:4px; margin-left:4px" 
+                                href="/editproduct?id=<%=result[i].productID %>">Edit</a>
+                        </td>
+                        <td style="padding: 5px;">
+                            <a id="delete" style="padding: 8px 16px; background-color: #d01110; font-weight: bold; color: white; text-decoration: none; border-radius: 5px;" 
+                                href="/delproduct?id=<%=result[i].productID %>">Delete</a>
+                        </td>
+                    </tr>
+                    <% lastproductID = result[i].productID; %>
+                <% } %>
+            </table>
+            <div class="add" >
+                <a id="add" style="padding: 8px 16px; background-color:#7D2AE7; color: white; font-weight: bold; text-decoration: none; border-radius: 5px;" 
+                                href="/addproduct?id=<%=lastproductID %>">Add Product</a>
+                </div>
+        </div>
+    </body>
+</html>
+<!-- #ffe001 -->

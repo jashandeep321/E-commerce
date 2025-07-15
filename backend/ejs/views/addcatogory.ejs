@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <a href="/" style="font-size: 20px;">Home</a>
+
+        <div style="width: 1200px; border: 2px dotted red; background-color: yellow; color: red;">
+            <h3 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Updated Information</h3>
+        
+            <form action="/addcatogory_submit" method="post">
+                <table align="center" border="1" cellspacing="5">
+
+                    <tr>
+                        <td>CatogoryId</td>
+                        <td> <input type="number" name="CID" ></td>
+                    </tr>
+                    <tr>
+                        <td>CatogoryName</td>
+                        <td> <input type="text" name="CName" required></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Add Catogory" style="background-color: red; width: 100%;"></td>
+                    </tr>
+                </table>
+                
+            </form>
+            
+        </div>
+    </body>
+</html>

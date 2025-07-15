@@ -1,0 +1,113 @@
+<!-- <html>
+    <head>
+        <title>Edited Menu</title>
+    </head>
+    <body>
+        <a href="/" style="font-size: 20px;">Home</a>
+        <div style="width: 1000px; text-align: center; margin: 0 auto;">
+         
+            <h3 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Updated Information</h3>
+            <form action="/edititem_submit " method="post">
+                <table align="center" border="1" cellspacing="5" style="margin: auto; ">
+                    <tr>
+                        <td>Product Id</td>
+                        <td> <input type="number" name="PID" value="<%= product.PID %>" style="width: 300px;" required></td>
+                    </tr>
+                    <tr>
+                        <td>Catogory Id</td>
+                        <td> <input type="number" name="CID" value="<%= product.CID %>" style="width: 300px;" required></td>
+                    </tr>
+                    <tr>
+                        <td>Product Name</td>
+                        <td> <input type="text" name="PName" value="<%= product.PName %>" style="width: 300px;" required></td>
+                    </tr>
+                    <tr>
+                        <td>Product Description</td>
+                        <td> <input type="text" name="PDescription" value="<%= product.PDescription %>" style="width: 300px;" required></td>
+                    </tr>
+                    <tr>
+                        <td>Product Price</td>
+                        <td> <input type="number" name="Price" min="50" value="<%= product.Price %>" style="width: 300px;"  required></td>
+                    </tr>
+                    <tr>
+                        <td>Product Image</td>
+                        <td> <input type="file" name="PImage" value="<%= product.PImage %>" ></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Update Items" style="background-color: red; width: 100%; height: 30px;">
+                        </td>
+                    </tr>
+                </table>   
+            </form>
+        </div>
+    </body>
+</html> -->
+
+
+<html>
+    <body>
+        <a href="/" style="font-size: 20px;">Home</a>
+        <div style="width: 1000px; text-align: center;">
+            
+            <h3 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Edit Product</h3>
+        
+            <form action="/editproduct_submit" method="post" enctype="multipart/form-data">
+
+                <table align="center" border="1" cellspacing="5">
+                    <tr>
+                        <td>Product ID</td>
+                        <td> <input type="number" name="productID" value="<%= product.productID %>" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>Product Name</td>
+                        <td> <input type="text" name="productName" value="<%= product.productName %>"></td>
+                    </tr>
+                    <tr>
+                        <td>Brand</td>
+                        <td> <input type="text" name="productBrand" value="<%= product.productBrand %>"></td>
+                    </tr>
+                    <tr>
+                        <td>Product Description</td>
+                        <td> <input type="text" name="productDetails" value="<%= product.productDetails %>"></td>
+                    </tr>
+                    <tr>
+                        <td>Product MRP</td>
+                        <td> <input type="number" name="productMRP" value="<%= product.productMRP %>"></td>
+                    </tr>
+                    <tr>
+                        <td>Product Price</td>
+                        <td> <input type="number" name="productPrice" value="<%= product.productPrice %>"></td>
+                    </tr>
+                    <tr>
+                        <td>Category</td>
+                        <td>
+                            <select name="productCatogory" value="<%= product.productCatogory %>">
+                                <option value="Men" <% if (product.productCatogory === 'Men') { %> selected <% } %>>Men</option>
+        <option value="Women" <% if (product.productCatogory === 'Women') { %> selected <% } %>>Women</option>
+        <option value="Kids" <% if (product.productCatogory === 'Kids') { %> selected <% } %>>Kids</option>
+        <option value="Accessories" <% if (product.productCatogory === 'Accessories') { %> selected <% } %>>Accessories</option>
+        <option value="Home Decor" <% if (product.productCatogory === 'Home Decor') { %> selected <% } %>>Home Decor</option>
+        <option value="Footwear" <% if (product.productCatogory === 'Footwear') { %> selected <% } %>>Footwear</option>
+    </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Product Image</td>
+                        <td> <input type="file" name="productImage"value="<%= product.productImage %>"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Save Changes" style="background-color: green; width: 100%;"></td>
+                    </tr>
+                </table>
+                
+            </form>
+            
+        </div>
+    </body>
+</html>
+

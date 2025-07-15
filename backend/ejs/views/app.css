@@ -1,0 +1,14 @@
+a#edit{
+    padding: 8px 16px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+a#delete{
+    padding: 8px 16px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}

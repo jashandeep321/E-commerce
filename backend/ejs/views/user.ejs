@@ -1,0 +1,58 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <a href="/" style="font-size: 20px;">Home</a>
+        <div style="width: 1200px; text-align: center; margin: 0 auto;">
+            
+            <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">MENU</h2>
+            
+            <table align="center" border="1" cellspacing="5" style="border-collapse: collapse; margin: auto;margin-bottom: 20px;">
+                <tr>
+                    <th style="padding: 10px;">User ID</th>
+                    <th style="padding: 10px;">User Name</th>
+                    <th style="padding: 10px;">Address Line 1</th>
+                    <th style="padding: 10px;">Address Line 2</th>
+                    <th style="padding: 10px;">Pincode</th>
+                    <th style="padding: 10px;">Contact</th>
+                    <th style="padding: 10px;">Email</th>
+                    <th style="padding: 10px;">Password</th>
+                    <th style="padding: 10px;">Actions</th>
+                </tr>
+                <% let lastUID; %>
+                <% for(let i=0;i<result.length;i++){ %>
+                    <tr style="text-align: center;">
+                        <td style="padding: 5px;"><%=result[i].UID %></td>
+                    <td style="padding: 10px;"><%=result[i].UName %></td>
+                    <td style="padding: 10px;"><%=result[i].PAdd1 %></td>
+                    <td style="padding: 10px;"><%=result[i].PAdd2 %></td>
+                    <td style="padding: 10px;"><%=result[i].Pincode %></td>
+                    <td style="padding: 10px;"><%=result[i].Contact %></td>
+                    <td style="padding: 10px;"><%=result[i].UEmail %></td>
+                    <td style="padding: 10px;"><%=result[i].Password %></td>
+                    
+                
+                        <td style="padding: 5px;">
+                            <a id="edit" style="padding: 8px 16px; background-color: #2A89DA; color: white; font-weight: bold; text-decoration: none; border-radius: 5px;" 
+                                href="/edituser?id=<%=result[i].UID %>">Edit</a>
+                        
+                            <a id="delete" style="padding: 8px 16px; background-color: #d01110; font-weight: bold; color: white; text-decoration: none; border-radius: 5px;" 
+                                href="/deluser?id=<%=result[i].UID %>">Delete</a>
+                        </td>
+                    </tr>
+                    <% lastUID = result[i].UID; %>
+                <% } %>
+            </table>
+            <div class="add" >
+                <a id="add" style="padding: 8px 16px; background-color:#7D2AE7; color: white; font-weight: bold; text-decoration: none; border-radius: 5px;" 
+                                href="/adduser?id=<%=lastUID %>">Add User</a>
+                </div>
+        </div>
+    </body>
+</html>
+<!-- #ffe001 -->
+
+
+
+
+
