@@ -86,6 +86,8 @@ npm install
 
 ### Run the Project
 
+---
+
 ### Start backend:
 
 cd ejs
