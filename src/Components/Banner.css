@@ -1,0 +1,15 @@
+.carousel-control-prev,
+.carousel-control-next {
+  display: none; /* Hide the previous and next arrows */
+}
+@media (max-width: 767px) {
+    .carousel-indicators {
+      display: none; /* Hide the control bars for phone viewports */
+    }
+    .carousel-item img {
+        height: 230px;
+        
+        
+      }
+  }
+ 
