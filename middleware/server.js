@@ -10,6 +10,7 @@ var db = require('./db_con.js');
 const sendVarifyMail = require('./mailer.js');
 require('dotenv').config();
 
+
 app.use(cors({
     origin:["http://localhost:3000"],
     methods:["POST", "GET", "PUT"],
@@ -242,22 +243,44 @@ app.get('/api/newCollection', (req, res) => {
     });
 });
 
+// app.get('/api/products/:productID', (req, res) => {
+//     const productID = req.params.productID;
+//     const query = `SELECT * FROM products WHERE productID = ${productID}`;
+
+//     db.query(query, (err, result) => {
+//         if (err) {
+//             res.status(500).json({ error: 'Error fetching product details' });
+//         } else {
+//             if (result.length === 0) {
+//                 res.status(404).json({ error: 'Product not found' });
+//             } else {
+//                 res.json(result[0]);
+//             }
+//         }
+//     });
+// });
+
+
 app.get('/api/products/:productID', (req, res) => {
     const productID = req.params.productID;
-    const query = `SELECT * FROM products WHERE productID = ${productID}`;
-
-    db.query(query, (err, result) => {
+    const query = `SELECT *, productID as id FROM products WHERE productID = ?`; // Explicitly include id
+    
+    db.query(query, [productID], (err, result) => {
         if (err) {
             res.status(500).json({ error: 'Error fetching product details' });
         } else {
             if (result.length === 0) {
                 res.status(404).json({ error: 'Product not found' });
             } else {
-                res.json(result[0]);
+                // Ensure response includes both productID and id
+                const product = result[0];
+                product.id = product.productID; // Duplicate for consistency
+                res.json(product);
             }
         }
     });
 });
+
 
 app.post("/contactus_user", (req, res) => {
     const userData = req.body;

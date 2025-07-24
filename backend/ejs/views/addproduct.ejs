@@ -1,68 +1,74 @@
 <html>
-    <body>
-        <a href="/" style="font-size: 20px;">Home</a>
-        <div style="width: 1200px; text-align: center; ;">
-            
-            <h3 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Add Food Item</h3>
-        
-            <form action="/addproduct_submit" method="post" enctype="multipart/form-data">
 
-                <table align="center" border="1" cellspacing="5">
-                    <!-- <tr>
+<body>
+    <a href="/" style="font-size: 20px;">Home</a>
+    <div style="width: 1200px; text-align: center; ;">
+
+        <h3 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Add Food Item</h3>
+
+        <form action="/addproduct_submit" method="post" enctype="multipart/form-data">
+
+            <table align="center" border="1" cellspacing="5">
+                <!-- <tr>
                         <td>ProductId</td>
                         <td> <input type="number" name="PID"></td>
                     </tr> -->
-                    <!-- <tr>
+                <!-- <tr>
                         <td>CatogoryId</td>
                         <td> <input type="number" name="CID"></td>
                     </tr> -->
-                    <tr>
-                        <td>ProductName</td>
-                        <td> <input type="text" name="productName"></td>
-                    </tr>
-                    <tr>
-                        <td>Brand</td>
-                        <td> <input type="text" name="productBrand"></td>
-                    </tr>
-                    <tr>
-                        <td>ProductDescription</td>
-                        <td> <input type="text" name="productDetails"></td>
-                    </tr>
-                    <tr>
-                        <td>ProductMRP</td>
-                        <td> <input type="number" name="productMRP" min="50"></td>
-                    </tr>
-                    <tr>
-                        <td>ProductPrice</td>
-                        <td> <input type="number" name="productPrice" min="50"></td>
-                    </tr>
-                    <tr>
-                        <td>Category</td>
-                        <td>
-                            <select name="productCatogory">
-                                <option>Men</option>
-                                <option>Women</option>
-                                <option>Kids</option>
-                                <option>Accesories</option>
-                                <option>Home Decor</option>
-                                <option>Footwear</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>ProductImage</td>
-                        <td> <input type="file" name="productImage"></td>
-                    </tr>
+                <tr>
+                    <td>ProductName</td>
+                    <td> <input type="text" name="productName"></td>
+                </tr>
+                <tr>
+                    <td>Brand</td>
+                    <td> <input type="text" name="productBrand"></td>
+                </tr>
+                <tr>
+                    <td>ProductDescription</td>
+                    <td><textarea name="productDetails" rows="5" cols="40"
+                            placeholder="Enter each point/paragraph in a new line"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td>ProductMRP</td>
+                    <td> <input type="number" name="productMRP" min="50"></td>
+                </tr>
+                <tr>
+                    <td>ProductPrice</td>
+                    <td> <input type="number" name="productPrice" min="50"></td>
+                </tr>
+                <tr>
+                    <td>Category</td>
+                    <td>
+                        <select name="productCatogory">
+                            <option>Men</option>
+                            <option>Women</option>
+                            <option>Kids</option>
+                            <option>Accesories</option>
+                            <option>Home Decor</option>
+                            <option>Footwear</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ProductImage</td>
+                    <td> <input type="file" name="productImages" multiple>
+                    </td>
+                </tr>
 
 
-                    <tr>
-                        <td colspan="2" align="center">
-                            <input type="submit" value="Add Items" style="background-color: red; width: 100%;"></td>
-                    </tr>
-                </table>
-                
-            </form>
-            
-        </div>
-    </body>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Add Items" style="background-color: red; width: 100%;">
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+
+    </div>
+</body>
+
 </html>
