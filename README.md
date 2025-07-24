@@ -84,9 +84,9 @@ npm install
 cd frontend
 npm install
 
-### Run the Project
-
 ---
+
+### Run the Project
 
 ### Start backend:
 
