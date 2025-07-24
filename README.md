@@ -133,6 +133,8 @@ npm start
 
 ![Product Listing Screenshot](Screenshots/Catagory.png)
 
+![Product Listing Screenshot](Screenshots/ProductInfo.png)
+
 ![Product Listing Screenshot](Screenshots/Cart.png)
 
 ---
