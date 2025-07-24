@@ -125,4 +125,24 @@ npm start
 - **Middleware**: Custom JWT-based authentication and role-based access control  
 - **Image Upload**: Multer (file upload middleware for handling multipart/form-data)
 
+--- 
+
+## Frontend Images
+
+![Product Listing Screenshot](Screenshots/HomePage.png)
+
+![Product Listing Screenshot](Screenshots/Catagory.png.png)
+
+![Product Listing Screenshot](Screenshots/Cart.png.png)
+
+---
+
+## Admin Pannel
+
+![Product Listing Screenshot](Screenshots/admin%20pannel.png.png)
+
+![Product Listing Screenshot](Screenshots/adminCatogory.png.png)
+
+![Product Listing Screenshot](Screenshots/AdminProducts.png.png)
+
 
