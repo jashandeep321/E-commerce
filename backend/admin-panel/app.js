@@ -3,7 +3,7 @@ var app = express();
 const cors = require('cors');
 var session=require('express-session');
 var bodyParser=require('body-parser');
-var db=require('./db_con.js')
+var db=require('../config/db_con')
 var multer = require('multer');
 const fs = require('fs');
 const path = require('path');
@@ -165,38 +165,6 @@ app.get('/addproduct',function(req,res){
         res.render('addproduct',{result:result});
     });
 });
-// app.post('/addproduct_submit',upload.array('productImages', 5) ,function(req,res){
-//     let { productName,productBrand, productDetails,productCatogory,productMRP, productPrice} = req.body;
-    
-//     var filename ="";
-//     var mimetype ="";
-//     try{
-//         filename=req.file.filename;
-//         mimetype=req.file.mimetype;
-//     }
-//     catch(err)
-//     {
-//         console.log(err);
-//     }
-//     // let PImage = req.file; // Assuming you are using multer or a similar middleware for handling file uploads
-
-//     let sql = "INSERT INTO products (productName, productBrand, productDetails,productCatogory,productMRP, productPrice, productImage) VALUES (?, ?, ?, ?, ?, ?, ?);";
-   
-//     // let sql ="insert into product(PID,CID,PName,PDescription,Price) values(?,?,?,?,?);";
-//     // console.log(sql);
-//     db.query(sql,[productName,productBrand, productDetails,productCatogory,productMRP, productPrice,filename],function(err,result){
-//         if(err){
-//             throw err;
-//         }
-//         else{
-//             console.log("Query Result:"+result);
-//             if(result && result.insertId>=0){
-//                 console.log("product Added");
-//                 res.redirect('/products');
-//             }
-//         }
-//     });
-// });
 
 app.post('/addproduct_submit', upload.array('productImages', 5), function(req, res) {
     let { productName, productBrand, productDetails, productCatogory, productMRP, productPrice } = req.body;
@@ -236,23 +204,6 @@ app.get('/delproduct', function(req,res){
     })
 })
 
-// app.get('/editproduct', function(req, res) {
-//     let productID = req.query['id'];
-
-//     db.query("SELECT * FROM products WHERE productID = " + productID, function(err, result) {
-//         if (err) {
-//             throw err;
-//         }
-
-//         if (result.length > 0) {
-//             res.render('editproduct', { product: result[0] });
-//         } else {
-//             // Handle the case where the product with the specified ID is not found
-//             res.status(404).send('Product not found');
-//         }
-
-//     });
-// });
 
 app.get('/editproduct', function(req, res) {
     const productID = req.query.id;
@@ -276,35 +227,6 @@ app.get('/editproduct', function(req, res) {
         res.render('editproduct', { product });
     });
 });
-
-
-
-
-// app.post('/editproduct_submit', upload.single('productImage'), function(req, res) {
-//     let { productID, productName, productBrand, productDetails, productMRP, productPrice } = req.body;
-
-//     // Handling file upload
-//     let productImage = "";
-//     try {
-//         productImage = req.file.filename;
-//     } catch (err) {
-//         console.log(err);
-//     }
-//     let filename1 = "";
-
-//     // Update the product information in the database
-//     let sql = "UPDATE products SET productName = ?, productBrand = ?, productDetails = ?, productMRP = ?, productPrice = ?, productImage = ? WHERE productID = ?";
-//     let params = [productName, productBrand, productDetails, productMRP, productPrice, productImage, productID];
-//     db.query(sql, params, function(err, result) {
-//         if (err) {
-//             throw err;
-//         }
-
-//         // Redirect to the cheflist after the edit is submitted
-//         res.redirect('/products');
-//     });
-// });
-
 
 
 app.post('/editproduct_submit', upload.array('productImages', 5), function (req, res) {

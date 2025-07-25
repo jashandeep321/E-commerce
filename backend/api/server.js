@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 var express = require('express');
 var session = require('express-session');
 var cookieParser= require('cookie-parser');
@@ -6,9 +6,9 @@ var MySQLStore = require('express-mysql-session')(session);
 var app = express();
 var bodyParser = require('body-parser');
 const cors = require('cors');
-var db = require('./db_con.js');
-const sendVarifyMail = require('./mailer.js');
-require('dotenv').config();
+var db = require('../config/db_con.js');
+const sendVarifyMail = require('../../middleware/mailer.js');
+
 
 
 app.use(cors({
