@@ -33,23 +33,6 @@ function App() {
   }, []);
 
 
-  //   const handleAddToCart = (item) => {
-  //   const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-  //   const existingItemIndex = cart.findIndex(i => i.productID === item.productID);
-
-  //   if (existingItemIndex !== -1) {
-  //     cart[existingItemIndex].quantity += 1;
-  //   } else {
-  //     cart.push({ ...item, quantity: 1 });
-  //   }
-
-  //   localStorage.setItem('cart', JSON.stringify(cart));
-  //   const newCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-  //   setCartCount(newCount);
-  // };
-
-
 const handleAddToCart = (item) => {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   
@@ -83,29 +66,6 @@ const handleAddToCart = (item) => {
 
 
   return (
-    // <Router>
-    // <div className="App">
-    //    <Navbar />
-    //    <Menubar/>
-      
-    //    <Routes>
-    //    <Route path='/' element={<Main/>}/>
-    //    <Route path="/Signup" element={<Signup />} />
-    //    <Route path="/Login" element={<Login />} />
-    //    {/* <Route path="/men" element={<ShopCategory category="men"/>}/> */}
-    //    {/* <Route path="/women" element={<women/>}/>
-    //    <Route path="/kid" element={<kid/>}/>
-    //    <Route path="/product" element={<Product/>}/> */}
-
-    //    <Route path="/Cart" element={<Cart/>}/>
-    //    {/* <Route path="/ProductDisplay" element={<ProductDisplay />} /> */}
-      
-    //   {/* </Route> */}
-    //   </Routes>
-    //   <Main/>
-    //   <Footer/>
-    // </div>
-    // </Router>
     <Router>
       <div className="App">
         <Navbar />
