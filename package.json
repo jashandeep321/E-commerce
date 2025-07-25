@@ -1,6 +1,7 @@
 {
   "name": "e-commerce",
   "version": "0.1.0",
+  "homepage": "https://jashandeep321.github.io/Shopify",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
@@ -24,7 +25,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -r https://github.com/jashandeep321/Shopify.git"
+
+
   },
   "eslintConfig": {
     "extends": [
@@ -43,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
